@@ -1,6 +1,13 @@
 # Домашнее задание: TodoMVC
 
+## Сборка и запуск
+
+```sh
+mvn clean install && mvn exec:java
+```
+
 ## API
+После сборки и запуска будет находится по адресу http://localhost:9999
 
 * Вернуть все TODO: `GET /todo`
 * Вернуть активные TODO: `GET /todo/active`
