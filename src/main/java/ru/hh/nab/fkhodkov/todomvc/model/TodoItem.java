@@ -2,10 +2,29 @@ package ru.hh.nab.fkhodkov.todomvc.model;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TodoItem")
 public class TodoItem {
-  private TodoStatus status;
-  private String text;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name="todo_id")
   private Integer todoId;
+
+  @Enumerated(EnumType.STRING)
+  @Column(name="todo_status")
+  private TodoStatus status;
+
+  @Column(name="todo_text", nullable = false)
+  private String text;
 
   public static boolean isActive(TodoItem todoItem) {
     return todoItem.status == TodoStatus.ACTIVE;

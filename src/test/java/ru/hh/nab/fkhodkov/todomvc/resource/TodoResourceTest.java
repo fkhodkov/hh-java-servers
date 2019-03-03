@@ -1,4 +1,4 @@
-package ru.hh.nab.fkhodkov.todomvc;
+package ru.hh.nab.fkhodkov.todomvc.resource;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -12,13 +12,13 @@ import javax.ws.rs.core.Response;
 import org.junit.Test;
 import org.springframework.test.context.ContextConfiguration;
 
+import ru.hh.nab.fkhodkov.todomvc.TodoTestConfig;
 import ru.hh.nab.fkhodkov.todomvc.dao.TodoDAO;
 import ru.hh.nab.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
 import ru.hh.nab.fkhodkov.todomvc.dto.TodoCollectionDTO;
 import ru.hh.nab.fkhodkov.todomvc.dto.TodoItemDTO;
 import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
 import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
-import ru.hh.nab.fkhodkov.todomvc.resource.TodoResource;
 import ru.hh.nab.starter.NabApplication;
 import ru.hh.nab.testbase.NabTestBase;
 
