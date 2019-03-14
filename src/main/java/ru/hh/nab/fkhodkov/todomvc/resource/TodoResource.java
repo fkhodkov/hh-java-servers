@@ -10,6 +10,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import ru.hh.nab.fkhodkov.todomvc.dto.TodoCollectionDTO;
 import ru.hh.nab.fkhodkov.todomvc.dto.TodoItemDTO;
 import ru.hh.nab.fkhodkov.todomvc.exceptions.TodoNotFoundException;
@@ -17,8 +19,12 @@ import ru.hh.nab.fkhodkov.todomvc.service.TodoService;
 
 @Path("/todo")
 public class TodoResource {
+  private final TodoService todoService;
 
-  private final TodoService todoService = new TodoService();
+  @Autowired
+  TodoResource(TodoService todoService) {
+    this.todoService = todoService;
+  }
 
   Response todoNotFound(Integer todoId) {
     return Response.status(Response.Status.NOT_FOUND.getStatusCode(),

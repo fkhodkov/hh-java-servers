@@ -8,10 +8,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 
+import org.springframework.stereotype.Component;
+
 import ru.hh.nab.fkhodkov.todomvc.exceptions.TodoNotFoundException;
 import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
 import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
 
+@Component
 public class TodoNoDBDAO implements TodoDAO {
   private static final AtomicInteger todoIdGenerator = new AtomicInteger();
   private static final Map<Integer, TodoItem> items = new HashMap<Integer, TodoItem>();
@@ -21,18 +24,17 @@ public class TodoNoDBDAO implements TodoDAO {
     return items.size();
   }
 
-  @Override
-  public long count(Predicate<TodoItem> predicate) {
-    return items.values().stream().filter(predicate).count();
+  private int count(Predicate<TodoItem> predicate) {
+    return (int) items.values().stream().filter(predicate).count();
   }
 
   @Override
-  public long countActive() {
+  public int countActive() {
     return count(TodoItem::isActive);
   }
 
   @Override
-  public long countCompleted() {
+  public int countCompleted() {
     return count(TodoItem::isCompleted);
   }
 
@@ -55,8 +57,7 @@ public class TodoNoDBDAO implements TodoDAO {
     return items.values();
   }
 
-  @Override
-  public Collection<TodoItem> getMatching(Predicate<TodoItem> predicate) {
+  private Collection<TodoItem> getMatching(Predicate<TodoItem> predicate) {
     Collection<TodoItem> result = new ArrayList<TodoItem>();
     getAllItems().stream().filter(predicate).forEach(result::add);
     return result;
@@ -91,15 +92,6 @@ public class TodoNoDBDAO implements TodoDAO {
   }
 
   @Override
-  public void changeStatus(Integer todoId, String status) throws TodoNotFoundException {
-    if (!items.containsKey(todoId)) {
-      throw new TodoNotFoundException("TODO #" + todoId + " not found");
-    } else {
-      items.get(todoId).setStatus(TodoStatus.fromString(status));
-    }
-  }
-
-  @Override
   public void deleteItem(Integer todoId) throws TodoNotFoundException {
     if (items.containsKey(todoId)) {
       items.remove(todoId);
@@ -108,7 +100,7 @@ public class TodoNoDBDAO implements TodoDAO {
     }
   }
 
-  public void deleteMatching(Predicate<TodoItem> predicate) {
+  private void deleteMatching(Predicate<TodoItem> predicate) {
     Iterator<Integer> keys = items.keySet().iterator();
     keys.forEachRemaining(todoId -> {
       if (predicate.test(items.get(todoId))) {

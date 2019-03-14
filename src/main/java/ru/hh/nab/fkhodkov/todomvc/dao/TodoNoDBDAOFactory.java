@@ -1,5 +1,8 @@
 package ru.hh.nab.fkhodkov.todomvc.dao;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TodoNoDBDAOFactory extends TodoDAOFactory {
 
   public static final TodoDAO todoDAO = new TodoNoDBDAO();
