@@ -1,9 +1,9 @@
-package ru.hh.nab.fkhodkov.todomvc.dto;
+package ru.hh.school.fkhodkov.todomvc.dto;
+
+import ru.hh.school.fkhodkov.todomvc.model.TodoItem;
+import ru.hh.school.fkhodkov.todomvc.model.TodoStatus;
 
 import java.util.Objects;
-
-import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
 
 public class TodoItemDTO {
   private TodoStatus status;

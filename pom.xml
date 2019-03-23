@@ -7,7 +7,7 @@
     <version>1.36</version>
   </parent>
 
-  <groupId>ru.hh.nab.fkhodkov</groupId>
+  <groupId>ru.hh.school.fkhodkov</groupId>
   <artifactId>todomvc</artifactId>
   <properties>
     <nab.version>4.15.4</nab.version>
@@ -57,7 +57,7 @@
               <value>${basedir}/src/etc/todomvc</value>
             </systemProperty>
           </systemProperties>
-          <mainClass>ru.hh.nab.fkhodkov.todomvc.TodoMain</mainClass>
+          <mainClass>ru.hh.school.fkhodkov.todomvc.TodoMain</mainClass>
         </configuration>
       </plugin>
 

@@ -1,9 +1,9 @@
-package ru.hh.nab.fkhodkov.todomvc.dto;
+package ru.hh.school.fkhodkov.todomvc.dto;
+
+import ru.hh.school.fkhodkov.todomvc.model.TodoItem;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
 
 public class TodoCollectionDTO {
   private Collection<TodoItemDTO> items;

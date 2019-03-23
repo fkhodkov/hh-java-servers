@@ -1,4 +1,10 @@
-package ru.hh.nab.fkhodkov.todomvc.dao;
+package ru.hh.school.fkhodkov.todomvc.dao;
+
+import org.springframework.stereotype.Component;
+
+import ru.hh.school.fkhodkov.todomvc.exceptions.TodoNotFoundException;
+import ru.hh.school.fkhodkov.todomvc.model.TodoItem;
+import ru.hh.school.fkhodkov.todomvc.model.TodoStatus;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,12 +13,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
-
-import org.springframework.stereotype.Component;
-
-import ru.hh.nab.fkhodkov.todomvc.exceptions.TodoNotFoundException;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
 
 @Component
 public class TodoNoDBDAO implements TodoDAO {

@@ -1,15 +1,15 @@
-package ru.hh.nab.fkhodkov.todomvc;
-
-import java.util.function.Function;
+package ru.hh.school.fkhodkov.todomvc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoNoDBDAO;
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
-import ru.hh.nab.fkhodkov.todomvc.service.TodoService;
 import ru.hh.nab.testbase.NabTestConfig;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoNoDBDAO;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
+import ru.hh.school.fkhodkov.todomvc.service.TodoService;
+
+import java.util.function.Function;
 
 @Configuration
 @Import({NabTestConfig.class, TodoService.class, TodoNoDBDAOFactory.class, TodoNoDBDAO.class})

@@ -1,21 +1,21 @@
-package ru.hh.nab.fkhodkov.todomvc;
+package ru.hh.school.fkhodkov.todomvc;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.springframework.test.context.ContextConfiguration;
+
+import ru.hh.nab.starter.NabApplication;
+import ru.hh.nab.testbase.NabTestBase;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoDAO;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
+import ru.hh.school.fkhodkov.todomvc.dto.TodoCollectionDTO;
+import ru.hh.school.fkhodkov.todomvc.resource.TodoResource;
 
 import java.util.function.Function;
 
 import javax.inject.Inject;
 import javax.ws.rs.core.Response;
-
-import org.junit.Test;
-import org.springframework.test.context.ContextConfiguration;
-
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoDAO;
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoCollectionDTO;
-import ru.hh.nab.fkhodkov.todomvc.resource.TodoResource;
-import ru.hh.nab.starter.NabApplication;
-import ru.hh.nab.testbase.NabTestBase;
 
 @ContextConfiguration(classes = TodoTestConfig.class)
 public class TodoServerAwareBeanTest extends NabTestBase {

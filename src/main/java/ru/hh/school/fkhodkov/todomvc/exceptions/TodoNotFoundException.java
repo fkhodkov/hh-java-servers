@@ -1,4 +1,4 @@
-package ru.hh.nab.fkhodkov.todomvc.exceptions;
+package ru.hh.school.fkhodkov.todomvc.exceptions;
 
 public class TodoNotFoundException extends Exception {
 

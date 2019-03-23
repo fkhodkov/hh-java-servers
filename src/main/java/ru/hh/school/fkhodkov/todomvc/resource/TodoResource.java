@@ -1,4 +1,11 @@
-package ru.hh.nab.fkhodkov.todomvc.resource;
+package ru.hh.school.fkhodkov.todomvc.resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ru.hh.school.fkhodkov.todomvc.dto.TodoCollectionDTO;
+import ru.hh.school.fkhodkov.todomvc.dto.TodoItemDTO;
+import ru.hh.school.fkhodkov.todomvc.exceptions.TodoNotFoundException;
+import ru.hh.school.fkhodkov.todomvc.service.TodoService;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -9,13 +16,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoCollectionDTO;
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoItemDTO;
-import ru.hh.nab.fkhodkov.todomvc.exceptions.TodoNotFoundException;
-import ru.hh.nab.fkhodkov.todomvc.service.TodoService;
 
 @Path("/todo")
 public class TodoResource {

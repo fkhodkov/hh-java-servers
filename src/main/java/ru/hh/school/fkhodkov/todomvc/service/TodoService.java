@@ -1,15 +1,15 @@
-package ru.hh.nab.fkhodkov.todomvc.service;
+package ru.hh.school.fkhodkov.todomvc.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoDAO;
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoDAOFactory;
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoCollectionDTO;
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoItemDTO;
-import ru.hh.nab.fkhodkov.todomvc.exceptions.TodoNotFoundException;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoDAO;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoDAOFactory;
+import ru.hh.school.fkhodkov.todomvc.dto.TodoCollectionDTO;
+import ru.hh.school.fkhodkov.todomvc.dto.TodoItemDTO;
+import ru.hh.school.fkhodkov.todomvc.exceptions.TodoNotFoundException;
+import ru.hh.school.fkhodkov.todomvc.model.TodoStatus;
 
 @Service
 @Component
@@ -34,6 +34,9 @@ public class TodoService {
   }
 
   public void addTodoItem(TodoItemDTO itemDTO) {
+    if (itemDTO.getStatus() == null) {
+      itemDTO.setStatus(TodoStatus.ACTIVE);
+    }
     todoDAO.addItem(itemDTO.todoItem());
   }
 

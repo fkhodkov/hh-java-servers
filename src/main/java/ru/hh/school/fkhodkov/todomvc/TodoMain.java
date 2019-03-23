@@ -1,4 +1,4 @@
-package ru.hh.nab.fkhodkov.todomvc;
+package ru.hh.school.fkhodkov.todomvc;
 
 import ru.hh.nab.starter.NabApplication;
 

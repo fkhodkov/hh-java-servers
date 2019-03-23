@@ -1,26 +1,26 @@
-package ru.hh.nab.fkhodkov.todomvc.resource;
+package ru.hh.school.fkhodkov.todomvc.resource;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.springframework.test.context.ContextConfiguration;
+
+import ru.hh.nab.starter.NabApplication;
+import ru.hh.nab.testbase.NabTestBase;
+import ru.hh.school.fkhodkov.todomvc.TodoTestConfig;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoDAO;
+import ru.hh.school.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
+import ru.hh.school.fkhodkov.todomvc.dto.TodoCollectionDTO;
+import ru.hh.school.fkhodkov.todomvc.dto.TodoItemDTO;
+import ru.hh.school.fkhodkov.todomvc.model.TodoItem;
+import ru.hh.school.fkhodkov.todomvc.model.TodoStatus;
 
 import java.util.function.Predicate;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import org.junit.Test;
-import org.springframework.test.context.ContextConfiguration;
-
-import ru.hh.nab.fkhodkov.todomvc.TodoTestConfig;
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoDAO;
-import ru.hh.nab.fkhodkov.todomvc.dao.TodoNoDBDAOFactory;
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoCollectionDTO;
-import ru.hh.nab.fkhodkov.todomvc.dto.TodoItemDTO;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
-import ru.hh.nab.starter.NabApplication;
-import ru.hh.nab.testbase.NabTestBase;
 
 @ContextConfiguration(classes = TodoTestConfig.class)
 public class TodoResourceTest extends NabTestBase {

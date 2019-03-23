@@ -1,4 +1,4 @@
-package ru.hh.nab.fkhodkov.todomvc.model;
+package ru.hh.school.fkhodkov.todomvc.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 

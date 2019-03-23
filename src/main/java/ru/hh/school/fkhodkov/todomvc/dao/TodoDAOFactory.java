@@ -1,4 +1,4 @@
-package ru.hh.nab.fkhodkov.todomvc.dao;
+package ru.hh.school.fkhodkov.todomvc.dao;
 
 public abstract class TodoDAOFactory {
   public abstract TodoDAO getTodoDAO();

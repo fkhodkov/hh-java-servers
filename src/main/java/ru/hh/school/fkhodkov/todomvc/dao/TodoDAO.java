@@ -1,12 +1,12 @@
-package ru.hh.nab.fkhodkov.todomvc.dao;
-
-import java.util.Collection;
+package ru.hh.school.fkhodkov.todomvc.dao;
 
 import org.springframework.stereotype.Repository;
 
-import ru.hh.nab.fkhodkov.todomvc.exceptions.TodoNotFoundException;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoItem;
-import ru.hh.nab.fkhodkov.todomvc.model.TodoStatus;
+import ru.hh.school.fkhodkov.todomvc.exceptions.TodoNotFoundException;
+import ru.hh.school.fkhodkov.todomvc.model.TodoItem;
+import ru.hh.school.fkhodkov.todomvc.model.TodoStatus;
+
+import java.util.Collection;
 
 @Repository
 public interface TodoDAO {
